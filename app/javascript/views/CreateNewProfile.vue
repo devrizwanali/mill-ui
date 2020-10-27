@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="profile">
-      <div class="card" aria-id="contentIdForA11y3" style="width: 50%">
+      <div class="card" aria-id="contentIdForA11y3" style="width: 90%;">
         <div
           class="card-header"
           role="button"
@@ -76,13 +76,19 @@ export default {
 };
 </script>
 <style scoped>
-.profile {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 20px;
-}
-.btn-home {
-  margin: 10px;
-}
+  .profile {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-top: 40px;
+  }
+  .btn-home {
+    margin: 10px;
+  }
+
+  .profile:hover {
+    z-index: 10;
+    width: 100%;
+    height: 90%;
+  }
 </style>

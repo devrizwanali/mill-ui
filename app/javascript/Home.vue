@@ -16,30 +16,29 @@
           <b-navbar-item href="#"> About </b-navbar-item>
           <b-navbar-item href="#"> Contact </b-navbar-item>
         </b-navbar-dropdown>
-      </template>
-
-      <template slot="end">
-        <b-navbar-item tag="div">
-          <div class="buttons">
-            <b-button @click="create">
-              <strong>Create New Profile</strong>
-            </b-button>
-            <a class="button is-light" @click="loadProfile"> Load Profile </a>
-          </div>
-        </b-navbar-item>
-      </template>
+      </template>  
     </b-navbar>
+    <div class="columns is-desktop" v-if="$route.path == '/'">
+      <div class="column is-6"><CreateNewProfile></CreateNewProfile></div>
+      <div class="column is-6"><LoadProfile></LoadProfile></div>
+    </div>
+
     <router-view />
   </div>
 </template>
 
 <script>
+import LoadProfile from "./views/LoadProfile.vue";
+import CreateNewProfile from "./views/CreateNewProfile.vue";
 export default {
   name: "HelloWorld",
+  components: {
+    LoadProfile,
+    CreateNewProfile
+  },
   props: {
     msg: String
   },
-
   methods: {
     create() {
       //this.$buefy.notification.open('Clicked!!')
